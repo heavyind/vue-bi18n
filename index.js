@@ -7,6 +7,7 @@ const cfgDefault = {
   store: null,
   languages: [],
   storeName: "bi18n",
+  scopeName: "bi18n",
   componentName: "bi18n"
 };
 
@@ -29,9 +30,9 @@ export default {
 
     Vue.mixin({
       computed: {
-        bi18n () {
+        [cfg.scopeName] () {
           return {
-            language: this.$store.state[cfg.storeName]["language"],
+            language: this.$store.state[cfg.storeName].language,
             languageIdx: this.$store.getters[`${cfg.storeName}/languageIdx`],
             set: (l) => this.$store.dispatch(`${cfg.storeName}/set`, l),
             setByIdx: (i) => this.$store.dispatch(`${cfg.storeName}/setByIdx`, i)
