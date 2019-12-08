@@ -7,9 +7,12 @@ const cfgStoreUndefined = "Your configuration object must include the Vuex store
 
 const cfgLanguagesUndefined = "Your configuration object must include the array of languages you intend to support. Recommended format uses string shortcodes (e.g., `{ languages: `['en', 'fr']`) }`";
 
+const languageNotSupported = "The language you tried to set was not included in your configuration for @heavyind/vue-bi18n.";
+
 
 export default {
   cfgUndefined,
   cfgStoreUndefined,
-  cfgLanguagesUndefined
+  cfgLanguagesUndefined,
+  languageNotSupported
 };
