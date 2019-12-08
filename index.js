@@ -1,4 +1,4 @@
-import bi18n from "./lib/bi18n";
+import createBi18n from "./lib/bi18n";
 import createStore from "./lib/store";
 import e from "./util/e.js";
 
@@ -25,6 +25,6 @@ export default {
 
     cfg.store.registerModule(cfg.storeName, createStore(cfg.languages));
 
-    Vue.component(cfg.componentName, bi18n(Vue));
+    Vue.component(cfg.componentName, createBi18n(cfg));
   }
 };
