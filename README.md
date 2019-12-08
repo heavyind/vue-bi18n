@@ -69,6 +69,7 @@ The basic configuration object looks like the following:
   scopeName: "bi18n",
   componentName: "bi18n"
 }
+```
 
 Both `store` and `languages` are mandatory. The `languages` property is recommended to be an array of common language shortcodes, like `['en', 'es', 'fr']`. Here's what they do:
 
@@ -92,7 +93,6 @@ Sets the name bound to `this` under which you can access API properties and meth
 
 Sets the name of the component. If you were to change this to `bar`, the component would be written `<bar>` rather than `<bi18n>`.
 
-```
 
 
 ## API
