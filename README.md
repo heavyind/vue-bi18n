@@ -45,7 +45,7 @@ For this example, assume we want to support English and French via a `languages:
 </bi18n>
 ```
 
-The appropriate greeting will be output based on which language you have currently set. It defaults to `languages[0]`, which is, in this case, `'en'`. Changing the current language is supported via calling `this.bi18n.set` on any Vue component. To get the current language, access `this.bi18n.language`. More methods and accessors are described under the API heading below.
+The appropriate greeting will be output based on which language you have currently set. It defaults to `languages[0]`, which is, in this case, `'en'`. Changing the current language is supported via calling `this.bi18n.set` on any Vue component: `this.bi18n.set('fr')`. To get the current language, access `this.bi18n.language`. More methods and accessors are described under the API heading below.
 
 ### Using custom tags
 
