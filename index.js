@@ -26,5 +26,18 @@ export default {
     cfg.store.registerModule(cfg.storeName, createStore(cfg.languages));
 
     Vue.component(cfg.componentName, createBi18n(cfg));
+
+    Vue.mixin({
+      computed: {
+        bi18n () {
+          return {
+            language: this.$store.state[cfg.storeName]["language"],
+            languageIdx: this.$store.getters[`${cfg.storeName}/languageIdx`],
+            set: (l) => this.$store.dispatch(`${cfg.storeName}/set`, l),
+            setByIdx: (i) => this.$store.dispatch(`${cfg.storeName}/setByIdx`, i)
+          };
+        }
+      }
+    });
   }
 };
