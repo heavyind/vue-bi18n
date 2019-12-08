@@ -2,7 +2,7 @@
 
 ## What it is
 
-Dead-simple internationalization for Vue applications. Yes, bi18n is a pun on *bilingual internationalization*. The plugin handles any number of languages, but practically speaking, the intended use case is for sites supporting at most two or three languages.
+Dead-simple internationalization for Vue applications. Yes, bi18n is a pun on *bilingual internationalization*. The plugin handles any number of languages, but practically speaking, the intended use case is for sites supporting at most two or three languages. Depends on Vuex.
 
 ## Installation
 
@@ -58,6 +58,7 @@ If you would like the content you pass into the `<bi18n>` component to render in
 </bi18n>
 ```
 If you don't provide a custom tag, `<bi18n>` renders as a text node.
+
 ## Configuration
 
 The basic configuration object looks like the following:
@@ -68,13 +69,33 @@ The basic configuration object looks like the following:
   scopeName: "bi18n",
   componentName: "bi18n"
 }
+
+Both `store` and `languages` are mandatory. The `languages` property is recommended to be an array of common language shortcodes, like `['en', 'es', 'fr']`. Here's what they do:
+
+`store`
+
+Allows vue-bi18n to hook into your Vuex store.
+
+`languages`
+
+Lets the store know which languages you want to support.
+
+`storeName`
+
+Sets the namespace of the store module.
+
+`scopeName`
+
+Sets the name bound to `this` under which you can access API properties and methods. If you were to set this to `foo`, the API would be available under `this.foo` rather than `this.bi18n`.
+
+`componentName`
+
+Sets the name of the component. If you were to change this to `bar`, the component would be written `<bar>` rather than `<bi18n>`.
+
 ```
 
-Both `store` and `languages` are mandatory. The `languages` property is recommended to be an array of common language shortcodes, like `['en', 'es', 'fr']`.
 
 ## API
-
-A handful of conveniences are attached to your Vue components, scoped under `bi18n` by default (configurable by setting `scopeName` in your configuration object):
 
 `this.bi18n.language` *String*
 
@@ -95,6 +116,9 @@ Set the current language via a string
 `this.bi18n.setByIdx` (*index: Number*)
 
 Set the current language by index of the original `languages` array passed into your configuration object
+
+---
+**Note:** the namespace of the API on Vue components can be set within the configuration object by passing a value for `scopeName`.
 
 ## License
 
