@@ -2,7 +2,7 @@
 
 ## What it is
 
-Dead-simple internationalization for Vue projects targeting a small language set.
+Dead-simple internationalization for Vue applications. Yes, bi18n is a pun on *bilingual internationalization*. The plugin handles any number of languages, but practically speaking, the intended use case is for sites supporting at most two or three languages.
 
 ## Installation
 
@@ -55,10 +55,3 @@ A handful of conveniences are attached to your Vue components, scoped under `bi1
 * `this.bi18n.languageIdx` The index of the currently-set language in the original `languages` array passed into your configuration object
 * `this.bi18n.set(l: String)` Set the current language via a string
 * `this.bi18n.setByIdx(i: Number)` Set the current language by index of the original `languages` array passed into your configuration object
-
-
-## FAQ
-
-* Can I use more than two languages?
-
-You can use as many as you'd like, but the most practical application is likely to be for supporting a limited number of languages (two or three). Much more and you'd have a mess!
