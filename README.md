@@ -53,5 +53,6 @@ A handful of conveniences are attached to your Vue components, scoped under `bi1
 
 * `this.bi18n.language` The currently-set language
 * `this.bi18n.languageIdx` The index of the currently-set language in the original `languages` array passed into your configuration object
+* `this.bi18n.languages` The list of available languages, as passed into your original configuration object
 * `this.bi18n.set(l: String)` Set the current language via a string
 * `this.bi18n.setByIdx(i: Number)` Set the current language by index of the original `languages` array passed into your configuration object
