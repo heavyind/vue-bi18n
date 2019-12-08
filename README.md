@@ -61,7 +61,7 @@ If you don't provide a custom tag, `<bi18n>` renders as a text node.
 
 ## Configuration
 
-The basic configuration object looks like the following:
+The default configuration object looks like this:
 ```
 { store: null
   languages: [],
@@ -71,27 +71,29 @@ The basic configuration object looks like the following:
 }
 ```
 
-Both `store` and `languages` are mandatory. The `languages` property is recommended to be an array of common language shortcodes, like `['en', 'es', 'fr']`. Here's what they do:
+Both `store` and `languages` are mandatory for you to reset. The `languages` property is recommended to be an array of common language shortcodes, like `['en', 'es', 'fr']`.
+
+### Configuration settings in-depth
 
 `store`
 
-Allows vue-bi18n to hook into your Vuex store.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows vue-bi18n to hook into your Vuex store.
 
 `languages`
 
-Lets the store know which languages you want to support.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lets the store know which languages you want to support.
 
 `storeName`
 
-Sets the namespace of the store module.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the namespace of the store module.
 
 `scopeName`
 
-Sets the name bound to `this` under which you can access API properties and methods. If you were to set this to `foo`, the API would be available under `this.foo` rather than `this.bi18n`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the name bound to `this` under which you can access API properties and methods. If you were to set this to `foo`, the API would be available under `this.foo` rather than `this.bi18n`.
 
 `componentName`
 
-Sets the name of the component. If you were to change this to `bar`, the component would be written `<bar>` rather than `<bi18n>`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the name of the component. If you were to change this to `bar`, the component would be written `<bar>` rather than `<bi18n>`.
 
 
 
@@ -99,23 +101,23 @@ Sets the name of the component. If you were to change this to `bar`, the compone
 
 `this.bi18n.language` *String*
 
-The currently-set language
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The currently-set language
 
 `this.bi18n.languageIdx` *Number*
 
-The index of the currently-set language in the original `languages` array passed into your configuration object
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The index of the currently-set language in the original `languages` array passed into your configuration object
 
 `this.bi18n.languages` *Array<String>*
 
-The list of available languages, as passed into your original configuration object
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The list of available languages, as passed into your original configuration object
 
 `this.bi18n.set` (*lang: String*)
 
-Set the current language via a string
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the current language via a string
 
 `this.bi18n.setByIdx` (*index: Number*)
 
-Set the current language by index of the original `languages` array passed into your configuration object
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the current language by index of the original `languages` array passed into your configuration object
 
 ---
 **Note:** the namespace of the API on Vue components can be set within the configuration object by passing a value for `scopeName`.
