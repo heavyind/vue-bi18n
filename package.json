@@ -1,0 +1,34 @@
+{
+  "name": "@heavyind/bi18n",
+  "version": "0.0.1",
+  "description": "Easy internationalization for projects targeting a small number of languages",
+  "main": "/dist/bi18n.cjs.js",
+  "module": "/dist/bi18n.esm.js",
+  "unpkg": "/dist/bi18n.umd.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest",
+    "watch": "rimraf dist && rollup -c ./build/config.js --watch",
+    "build": "rimraf dist && rollup -c ./build/config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heavyind/bi18n.git"
+  },
+  "keywords": [
+    "vue",
+    "vuex"
+  ],
+  "author": "Heavy Industries",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heavyind/bi18n/issues"
+  },
+  "homepage": "https://github.com/heavyind/bi18n#readme",
+  "devDependencies": {
+    "rimraf": "^3.0.0",
+    "rollup": "^1.27.9"
+  }
+}
