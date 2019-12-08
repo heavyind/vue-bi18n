@@ -17,7 +17,7 @@ Via yarn:
 $ yarn add @heavyind/vue-bi18n
 ```
 
-Via unpkg (exposed as `bi18n`):
+Via unpkg (exposed as `VueBi18n`):
 ```
 <script src="https://unpkg.com/@heavyind/vue-bi18n"></script>
 ```
