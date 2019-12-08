@@ -2,8 +2,7 @@
 
 ## What it is
 
-Internationalization that's as simple as typing static HTML.
-
+Dead-simple internationalization for Vue projects targeting a small language set.
 
 ## Installation
 
@@ -23,7 +22,7 @@ Vue.use(bi18n, cfg);
 
 ## Usage
 
-Assuming configuration object supports English and French, usage is dead simple:
+Assuming we passed a configuration object supporting English and French via a `languages: ['en', 'fr']` property, usage is as follows:
 
 ```
 <bi18n>
@@ -32,7 +31,7 @@ Assuming configuration object supports English and French, usage is dead simple:
 </bi18n>
 ```
 
-The appropriate greeting will be output based on which language you have currently set. Changing the default language is supported via calling `this.bi18n.set` on any Vue component. To get the current language, access `this.bi18n.language`.
+The appropriate greeting will be output based on which language you have currently set. It defaults to `languages[0]`, which is, in this case, `'en'`. Changing the current language is supported via calling `this.bi18n.set` on any Vue component. To get the current language, access `this.bi18n.language`.
 
 ## Configuration
 
