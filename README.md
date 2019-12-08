@@ -6,13 +6,25 @@ Dead-simple internationalization for Vue applications. Yes, bi18n is a pun on *b
 
 ## Installation
 
-Install the package:
+Via npm:
 
 ```
 $ npm install --save @heavyind/vue-bi18n
 ```
 
-Install the plugin and pass in a configuration object:
+Via yarn:
+```
+$ yarn add @heavyind/vue-bi18n
+```
+
+Via unpkg:
+```
+<script src="https://unpkg.com/@heavyind/vue-bi18n"></script>
+```
+
+## Usage
+
+Install the plugin and pass in a configuration object including your store and the list of languages you intend to support.
 
 ```
 import bi18n from "@heavyind/vue-bi18n";
@@ -20,9 +32,7 @@ import bi18n from "@heavyind/vue-bi18n";
 Vue.use(bi18n, cfg);
 ```
 
-## Usage
-
-Assuming we passed a configuration object supporting English and French via a `languages: ['en', 'fr']` property, usage is as follows:
+For this example, assume we want to support English and French via a `languages: ['en', 'fr']` property on our configuration object. Usage is as follows:
 
 ```
 <bi18n>
