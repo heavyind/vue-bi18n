@@ -5,9 +5,9 @@ import e from "./util/e.js";
 
 const cfgDefault = {
   store: null,
+  languages: [],
   storeName: "bi18n",
-  componentName: "bi18n",
-  languages: []
+  componentName: "bi18n"
 };
 
 export default {
