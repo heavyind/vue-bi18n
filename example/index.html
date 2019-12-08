@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Vue bi18n</title>
+    <meta charset="utf-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
+    <script src="https://unpkg.com/@heavyind/vue-bi18n"></script>
+  </head>
+  <body>
+
+    <div id="app">
+
+      <bi18n>
+        <template v-slot:en>Welcome</template>
+        <template v-slot:fr>Bienvenue</template>
+      </bi18n>
+
+
+      <div>
+        <button @click="bi18n.set('en')">Switch to English</button>
+        <button @click="bi18n.set('fr')">Switch to French</button>
+      </div>
+
+    </div>
+
+    <script>
+      var store = new Vuex.Store({});
+      Vue.use(VueBi18n, { store, languages: ["en", "fr"] });
+      
+      new Vue({
+        el: "#app",
+        store
+      });
+    </script>
+  </body>
+</html>
