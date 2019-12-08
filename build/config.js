@@ -20,7 +20,7 @@ const umd = {
   output: {
     file: makePath("umd"),
     format: "umd",
-    name: "bi18n"
+    name: "VueBi18n"
   }
 };
 
