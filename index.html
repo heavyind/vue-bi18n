@@ -5,17 +5,57 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vuex"></script>
     <script src="https://unpkg.com/@heavyind/vue-bi18n"></script>
-  </head>
-  <body>
+    <style>
 
+      .foo-enter-active {
+        opacity: 1;
+        transition: opacity 1s;
+      }
+
+      .foo-enter {
+        opacity: 0;
+      }
+
+      .foo-leave-active {
+        opacity: 0;
+        transition: opacity 1s;
+      }
+      
+      h1 {
+        font-size: 22px
+      }
+    </style>
+  </head>
+
+  <body>
     <div id="app">
+
+
+      <h1>An example using text nodes</h1>
 
       <bi18n>
         <template v-slot:en>Welcome</template>
         <template v-slot:fr>Bienvenue</template>
       </bi18n>
 
+      <h1>An example using tags</h1>
 
+      <bi18n tag="span" :key="bi18n.language">
+        <template v-slot:en>Welcome</template>
+        <template v-slot:fr>Bienvenue</template>
+      </bi18n>
+       
+      <h1>An example using transitions (requires tag and key)</h1>
+
+      <transition name="foo" mode="out-in">
+        <bi18n tag="span" :key="bi18n.language">
+          <template v-slot:en>Welcome</template>
+          <template v-slot:fr>Bienvenue</template>
+        </bi18n>
+      </transition>
+
+
+      <hr>
       <div>
         <button @click="bi18n.set('en')">Switch to English</button>
         <button @click="bi18n.set('fr')">Switch to French</button>
