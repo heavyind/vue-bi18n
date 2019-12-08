@@ -1,6 +1,6 @@
 {
   "name": "@heavyind/vue-bi18n",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Easy internationalization for projects targeting a small number of languages",
   "main": "/dist/vue-bi18n.cjs.js",
   "module": "/dist/vue-bi18n.esm.js",
