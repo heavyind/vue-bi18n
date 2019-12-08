@@ -2,9 +2,9 @@
   "name": "@heavyind/bi18n",
   "version": "0.0.1",
   "description": "Easy internationalization for projects targeting a small number of languages",
-  "main": "/dist/bi18n.cjs.js",
-  "module": "/dist/bi18n.esm.js",
-  "unpkg": "/dist/bi18n.umd.js",
+  "main": "/dist/vue-bi18n.cjs.js",
+  "module": "/dist/vue-bi18n.esm.js",
+  "unpkg": "/dist/vue-bi18n.umd.js",
   "directories": {
     "lib": "lib"
   },

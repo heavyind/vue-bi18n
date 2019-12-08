@@ -2,7 +2,7 @@ const path = require("path");
 
 
 const makePath = (f) => {
-  return path.join("./dist/", `bi18n.${f}.js`);
+  return path.join("./dist/", `vue-bi18n.${f}.js`);
 };
 
 const base = {
