@@ -2,7 +2,7 @@
 
 ## What it is
 
-Dead-simple internationalization for Vue applications. Yes, bi18n is a pun on *bilingual internationalization*. The plugin handles any number of languages, but practically speaking, the intended use case is for sites supporting at most two or three languages. Depends on Vuex. A working example can be found on the [Heavy Industries vue-bi18n GitHub Pages site](https://heavyind.github.io/vue-bi18n/).
+Dead-simple internationalization for Vue applications. Yes, bi18n is a pun on *bilingual i18n*. The plugin handles any number of languages, but practically speaking, the intended use case is for sites supporting at most two or three languages. Depends on Vuex. A working example can be found on the [Heavy Industries vue-bi18n GitHub Pages site](https://heavyind.github.io/vue-bi18n/).
 
 ## Installation
 
