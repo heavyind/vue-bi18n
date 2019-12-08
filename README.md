@@ -24,25 +24,40 @@ Via unpkg:
 
 ## Usage
 
+**Note:** Component tag name, store name, and scope name are configurable. For the sake of examples throughout this document we will use the default, which is `bi18n` for all three. More information can be found under the Configuration heading below.
+
+### Getting started
+
 Install the plugin and pass in a configuration object including your store and the list of languages you intend to support.
 
 ```
-import bi18n from "@heavyind/vue-bi18n";
+import VueBi18nfrom "@heavyind/vue-bi18n";
 
-Vue.use(bi18n, cfg);
+Vue.use(VueBi18n, cfg);
 ```
 
 For this example, assume we want to support English and French via a `languages: ['en', 'fr']` property on our configuration object. Usage is as follows:
 
 ```
 <bi18n>
-  <template v-slot:en>Welcome</template>
-  <template v-slot:fr>Bienvenue</template>
+  <template v-slot:en>Hello, world.</template>
+  <template v-slot:fr>Bonjour, le monde.</template>
 </bi18n>
 ```
 
-The appropriate greeting will be output based on which language you have currently set. It defaults to `languages[0]`, which is, in this case, `'en'`. Changing the current language is supported via calling `this.bi18n.set` on any Vue component. To get the current language, access `this.bi18n.language`.
+The appropriate greeting will be output based on which language you have currently set. It defaults to `languages[0]`, which is, in this case, `'en'`. Changing the current language is supported via calling `this.bi18n.set` on any Vue component. To get the current language, access `this.bi18n.language`. More methods and accessors are described under the API heading below.
 
+### Using custom tags
+
+If you would like the content you pass into the `<bi18n>` component to render inside a particular tag, just pass its name in as a prop:
+
+```
+<bi18n tag="h1">
+  <template v-slot:en>On the Internet, nobody knows you're a dog.</template> 
+  <template v-slot:fr>Sur Internet, personne ne sait que tu es un chien.</template> 
+</bi18n>
+```
+If you don't provide a custom tag, `<bi18n>` renders as a text node.
 ## Configuration
 
 The basic configuration object looks like the following:
@@ -61,8 +76,26 @@ Both `store` and `languages` are mandatory. The `languages` property is recommen
 
 A handful of conveniences are attached to your Vue components, scoped under `bi18n` by default (configurable by setting `scopeName` in your configuration object):
 
-* `this.bi18n.language` The currently-set language
-* `this.bi18n.languageIdx` The index of the currently-set language in the original `languages` array passed into your configuration object
-* `this.bi18n.languages` The list of available languages, as passed into your original configuration object
-* `this.bi18n.set(l: String)` Set the current language via a string
-* `this.bi18n.setByIdx(i: Number)` Set the current language by index of the original `languages` array passed into your configuration object
+`this.bi18n.language` *String*
+
+The currently-set language
+
+`this.bi18n.languageIdx` *Number*
+
+The index of the currently-set language in the original `languages` array passed into your configuration object
+
+`this.bi18n.languages` *Array<String>*
+
+The list of available languages, as passed into your original configuration object
+
+`this.bi18n.set` (*lang: String*)
+
+Set the current language via a string
+
+`this.bi18n.setByIdx` (*index: Number*)
+
+Set the current language by index of the original `languages` array passed into your configuration object
+
+## License
+
+MIT
