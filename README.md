@@ -65,8 +65,8 @@ The default configuration object looks like this:
 ```
 { store: null
   languages: [],
-  storeName: "bi18n",
-  scopeName: "bi18n",
+  mixinNamespace: "$bi18n",
+  storeNamespace: "bi18n",
   componentName: "bi18n"
 }
 ```
@@ -83,13 +83,13 @@ Both `store` and `languages` are mandatory for you to reset. The `languages` pro
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lets the store know which languages you want to support.
 
-`storeName`
+`storeNamespace`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the namespace of the store module.
 
-`scopeName`
+`mixinNamespace`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the name bound to `this` under which you can access API properties and methods. If you were to set this to `foo`, the API would be available under `this.foo` rather than `this.bi18n`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the name bound to `this` under which you can access API properties and methods. If you were to set this to `foo`, the API would be available under `this.foo` rather than `this.$bi18n`.
 
 `componentName`
 
@@ -99,28 +99,28 @@ Both `store` and `languages` are mandatory for you to reset. The `languages` pro
 
 ## API
 
-`this.bi18n.language` *String*
+`this.$bi18n.language` *String*
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The currently-set language
 
-`this.bi18n.languageIdx` *Number*
+`this.$bi18n.languageIdx` *Number*
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The index of the currently-set language in the original `languages` array passed into your configuration object
 
-`this.bi18n.languages` *Array<String>*
+`this.$bi18n.languages` *Array<String>*
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The list of available languages, as passed into your original configuration object
 
-`this.bi18n.set` (*lang: String*)
+`this.$bi18n.set` (*lang: String*)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the current language via a string
 
-`this.bi18n.setByIdx` (*index: Number*)
+`this.$bi18n.setByIdx` (*index: Number*)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the current language by index of the original `languages` array passed into your configuration object
 
 ---
-**Note:** the namespace of the API on Vue components can be set within the configuration object by passing a value for `scopeName`.
+**Note:** the namespace of the API on Vue components can be set within the configuration object by passing a value for `mixinNamespace`.
 
 ## License
 
