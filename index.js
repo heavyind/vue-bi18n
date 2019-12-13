@@ -17,7 +17,7 @@ export default {
 
     const cfg = { ...cfgDefault, ..._cfg };
 
-    cfg.store.registerModule(cfg.storeName, createStore(cfg.languages));
+    cfg.store.registerModule(cfg.storeNamespace, createStore(cfg.languages));
 
     Vue.component(cfg.componentName, createBi18n(cfg));
 
