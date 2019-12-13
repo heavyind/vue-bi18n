@@ -4,7 +4,8 @@
     <meta charset="utf-8"/>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vuex"></script>
-    <script src="https://unpkg.com/@heavyind/vue-bi18n"></script>
+    <!-- <script src="https://unpkg.com/@heavyind/vue-bi18n"></script> -->
+    <script src="../dist/vue-bi18n.umd.js"></script>
     <style>
 
       .foo-enter-active {
@@ -65,7 +66,7 @@
 
     <script>
       var store = new Vuex.Store({});
-      Vue.use(VueBi18n, { store, languages: ["en", "fr"] });
+      Vue.use(VueBi18n, { store, languages: ["en", "fr"], mixin: true });
       
       new Vue({
         el: "#app",

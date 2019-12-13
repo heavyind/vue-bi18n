@@ -1,20 +1,13 @@
 import createBi18n from "./lib/bi18n";
 import createStore from "./lib/store";
+import { createBi18nMixin } from "./lib/mixin";
+import { cfgDefault } from "./util/config";
 import e from "./util/e.js";
 
-
-const cfgDefault = {
-  store: null,
-  languages: [],
-  storeName: "bi18n",
-  scopeName: "bi18n",
-  componentName: "bi18n"
-};
 
 export default {
 
   install (Vue, _cfg) {
-
 
     if (typeof _cfg === "undefined") { throw new Error(e.cfgUndefined); }
 
@@ -28,18 +21,10 @@ export default {
 
     Vue.component(cfg.componentName, createBi18n(cfg));
 
-    Vue.mixin({
-      computed: {
-        [cfg.scopeName] () {
-          return {
-            language: this.$store.state[cfg.storeName].language,
-            languageIdx: this.$store.getters[`${cfg.storeName}/languageIdx`],
-            languages: this.$store.state[cfg.storeName].languages,
-            set: (l) => this.$store.dispatch(`${cfg.storeName}/set`, l),
-            setByIdx: (i) => this.$store.dispatch(`${cfg.storeName}/setByIdx`, i)
-          };
-        }
-      }
-    });
-  }
+    if (cfg.mixin) {
+      Vue.mixin(createBi18nMixin(cfg));
+    }
+  },
+
+  createBi18nMixin
 };
